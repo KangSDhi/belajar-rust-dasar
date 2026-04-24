@@ -10,3 +10,36 @@ fn main() {
 fn hello_test() {
     println!("Hello Test");
 }
+
+#[test]
+fn test_variable() {
+    let name = "Sigit Boworaharjo";
+    println!("Hello, {}", name);
+}
+
+#[test]
+fn test_mutable() {
+    let mut name = "Sigit Boworaharjo";
+    println!("Hello, {}", name);
+
+    name = "Dhini";
+    println!("Hello, {}", name);
+}
+
+#[test]
+fn static_typing() {
+    let name = "Sigit Boworaharjo";
+    println!("Hello, {}", name);
+
+    // name = 10;
+    println!("Hello, {}", name);
+}
+
+#[test]
+fn shadowing() {
+    let name = "Sigit Boworaharjo";
+    println!("Hello, {}", name);
+
+    let name = 10;
+    println!("Hello, {}", name);
+}
