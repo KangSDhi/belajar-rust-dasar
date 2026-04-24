@@ -5,3 +5,8 @@ fn main() {
 
     println!("Hello Dhini")
 }
+
+#[test]
+fn hello_test() {
+    println!("Hello Test");
+}
