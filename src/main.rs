@@ -51,7 +51,13 @@ fn shadowing() {
     ini komentar lebih dari satu baris
 */
 #[test]
-fn comment(){
+fn comment() {
     // ini komentar
     println!("Hello"); // ini komentar lagi
+}
+
+#[test]
+fn explicit() {
+    let age: i32 = 20;
+    println!("Hello, {}", age);
 }
