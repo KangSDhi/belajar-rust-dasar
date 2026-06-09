@@ -255,3 +255,24 @@ fn function_a(){
 
     println!("{} {}", a, b);
 }
+
+#[test]
+fn string(){
+    let name: &str = " Sigit Boworaharjo ";
+    let trim: &str = name.trim();
+
+    println!("{}", name);
+    println!("{}", trim);
+}
+
+#[test]
+fn string_type(){
+    let mut name: String = String::from("Sigit Boworaharjo");
+    println!("{}", name);
+
+    name.push_str(" Sukisno");
+    println!("{}", name);
+
+    let dhini = name.replace("Sigit", "Dhini");
+    println!("{}", dhini);
+}
