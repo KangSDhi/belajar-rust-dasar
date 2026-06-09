@@ -235,3 +235,23 @@ fn variable_scope(){
 
     // println!("{}", boworaharjo); // error
 }
+
+#[test]
+fn stack_heap(){
+    function_a();
+    function_b();
+}
+
+fn function_b(){
+    let a = 10;
+    let b = String::from("Sigit");
+
+    println!("{} {}", a, b);
+}
+
+fn function_a(){
+    let a = 10;
+    let b = String::from("Boworaharjo");
+
+    println!("{} {}", a, b);
+}
