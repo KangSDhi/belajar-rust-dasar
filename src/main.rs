@@ -276,3 +276,43 @@ fn string_type(){
     let dhini = name.replace("Sigit", "Dhini");
     println!("{}", dhini);
 }
+
+#[test]
+fn ownership_rules(){
+    let a = 10;
+
+    {
+        let b = 10;
+        println!("{}", b);
+    }
+
+    println!("{}", a);
+}
+
+#[test]
+fn data_copy(){
+    let a = 10;
+    let b = a; // copy data dari a ke b
+
+    println!("{} {}", a, b);
+}
+
+#[test]
+fn ownership_movement(){
+    let name1 = String::from("Sigit Boworaharjo");
+
+    // ownership dari name1 dipindahkan ke name2
+    let name2 = name1;
+    // name1 tidak bisa diakses disini
+
+    println!("{}", name2);
+    // println!("{}", name1);
+}
+
+#[test]
+fn clone(){
+    let name1 = String::from("Sigit Boworaharjo");
+    let name2 = name1.clone();
+
+    println!("{} {}", name1, name2);
+}
