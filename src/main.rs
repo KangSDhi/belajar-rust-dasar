@@ -712,3 +712,36 @@ fn test_nothing() {
     let _nothing0: Nothing = Nothing;
     let _nothing1: Nothing = Nothing{};
 }
+
+impl Person {
+    fn say_hello(&self, name: &str) {
+        println!("Hello, {} my name is {}", name, self.first_name);
+    }
+}
+
+impl GeoPoint {
+    fn new(long: f64, lat: f64) -> GeoPoint {
+        GeoPoint(long, lat)
+    }
+}
+
+#[test]
+fn test_method() {
+    let person = Person{
+        first_name: String::from("Sigit"),
+        middle_name: String::from("Boworaharjo"),
+        last_name: String::from("Sukisno"),
+        age: 29
+    };
+
+    person.say_hello("Dhini");
+
+    println!("{}", person.first_name);
+}
+
+#[test]
+fn test_method_new() {
+    let geo_point = GeoPoint::new(-6.200000, 106.816666);
+    println!("long : {}", geo_point.0);
+    println!("lat : {}", geo_point.1);
+}
