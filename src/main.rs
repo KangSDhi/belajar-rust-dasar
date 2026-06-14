@@ -528,3 +528,53 @@ fn test_factorial_recursive() {
     let result = factorial_recursive(5);
     println!("Result: {}", result);
 }
+
+fn print_number(number: i32) {
+    println!("number: {}", number);
+}
+
+fn hi(name: String) {
+    println!("name: {}", name);
+}
+
+#[test]
+fn test_hi() {
+    let number = 10;
+    print_number(number);
+    println!("{}", number);
+
+    let name = String::from("Sigit");
+    hi(name);
+    // println!("{}", name);
+}
+
+fn full_name(first_name: String, last_name: String) -> String {
+    format!("{} {}", first_name, last_name)
+}
+
+#[test]
+fn test_full_name() {
+    let first_name = String::from("Sigit");
+    let last_name = String::from("Boworaharjo");
+
+    let name = full_name(first_name, last_name);
+    println!("{}", name);
+    // println!("{}", first_name);
+    // println!("{}", last_name);
+}
+
+fn full_name_0(first_name: String, last_name: String) -> (String, String, String) {
+    let full_name = format!("{} {}", first_name, last_name);
+    (first_name, last_name, full_name)
+}
+
+#[test]
+fn test_full_name_0() {
+    let first_name = String::from("Sigit");
+    let last_name = String::from("Boworaharjo");
+
+    let (a, b, full_name) = full_name_0(first_name, last_name);
+    println!("{}", full_name);
+    println!("{}", a);
+    println!("{}", b);
+}
