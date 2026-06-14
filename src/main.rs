@@ -578,3 +578,57 @@ fn test_full_name_0() {
     println!("{}", a);
     println!("{}", b);
 }
+
+fn full_name_1(first_name: &String, last_name: &String) -> String {
+    format!("{} {}", first_name, last_name)
+}
+
+#[test]
+fn test_full_name_1() {
+    let first_name = String::from("Sigit");
+    let last_name = String::from("Boworaharjo");
+
+    let full_name = full_name_1(&first_name, &last_name);
+    println!("{}", full_name);
+    println!("{}", first_name);
+    println!("{}", last_name);
+}
+
+// fn change_value(value: &String) {
+//     value.push_str("Kang")
+// }
+//
+// #[test]
+// fn test_change_value() {
+//     let mut value = String::from("Sigit");
+//     change_value(&value);
+//     println!("{}", value);
+// }
+
+fn change_value_0(value: &mut String) {
+value.push_str("Sigit")
+}
+
+#[test]
+fn test_change_value_0() {
+    let mut value = String::from("Kang ");
+    change_value_0(&mut value);
+    println!("{}", value);
+}
+
+fn get_full_name(first_name: &String, last_name: &String) -> String {
+    let name = format!("{} {}", first_name, last_name);
+    return name;
+}
+
+#[test]
+fn test_get_full_name() {
+    let first_name = String::from("Sigit");
+    let last_name = String::from("Boworaharjo");
+
+    let full_name = get_full_name(&first_name, &last_name);
+
+    println!("{}", full_name);
+    println!("{}", first_name);
+    println!("{}", last_name);
+}
