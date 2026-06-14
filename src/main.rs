@@ -745,3 +745,45 @@ fn test_method_new() {
     println!("long : {}", geo_point.0);
     println!("lat : {}", geo_point.1);
 }
+
+enum Level {
+    Regular,
+    Premium,
+    Platinum
+}
+
+#[test]
+fn test_enum() {
+    let _level1: Level = Level::Regular;
+    let _level2: Level = Level::Premium;
+    let _level3: Level = Level::Platinum;
+}
+
+enum Payment {
+    CreditCard(String),
+    BankTransfer(String, String),
+    EWallet(String, String),
+}
+
+#[test]
+fn test_payment() {
+    let _payment0 = Payment::CreditCard(String::from("637746644"));
+    let _payment1 = Payment::BankTransfer(String::from("BCA"), String::from("53663552"));
+    let _payment2 = Payment::EWallet(String::from("GoPay"), String::from("63553442522"));
+}
+
+impl Payment {
+    fn pay(&self, amount: u32) {
+        println!("Payment amount: {}", amount);
+    }
+}
+
+#[test]
+fn test_payment_0() {
+    let _payment0 = Payment::CreditCard(String::from("637746644"));
+    _payment0.pay(10000);
+    let _payment1 = Payment::BankTransfer(String::from("BCA"), String::from("53663552"));
+    _payment1.pay(300000);
+    let _payment2 = Payment::EWallet(String::from("GoPay"), String::from("63553442522"));
+    _payment2.pay(10000);
+}
